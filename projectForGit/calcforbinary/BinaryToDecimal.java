@@ -2,7 +2,7 @@ package calcforbinary;
 
 
 public class BinaryToDecimal {
-    public String toDecimal(String binary) {
+    public String toDecimal(String binary) throws NumberFormatException {
         int n ;
         int num ;
         String s = null;
