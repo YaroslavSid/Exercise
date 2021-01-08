@@ -7,7 +7,7 @@ public class Matrix {
     public static void main(String[] args) {
         MatrixOne matrixOne = new MatrixOne();
         Random random = new Random();
-
+        // todo initiate with random numbers
 
         int[][] firstMatrix = new int[3][3];
         for (int i = 0; i < firstMatrix.length; i++) {
