@@ -19,6 +19,7 @@
 2. Use dictionary for random words. May take *words.txt* in project root. May use
    services for generating dictionaries (http://app.aspell.net/create?defaults=en_US).
    Or more complicated variant to use rest service like https://www.datamuse.com/api/
-   to request words.
+   to request words. Then Apache HttpClient can be used to do GET request. 
+   Jackson or Gson can be used as a deserializer.
 3. Insert several "known" lines in each file. It means hardcode several lines everyone
    will know they exist in the database. May use words from *words.txt*.
