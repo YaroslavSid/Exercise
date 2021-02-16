@@ -8,9 +8,16 @@ import java.io.PrintWriter;
  */
 public class Doc {
 
+    String[] valueTypes = {"Integer", "Double"};
 
     private long random_method(long max) {
-        return 1 + (long) (Math.random() * max);
+        // from 0 to max
+        return (long) (Math.random() * (max + 1));
+    }
+
+    private String randomValueType() {
+        int number = (int) random_method(1);
+        return valueTypes[number];
     }
 
     // all methods have  similar structure!!!
@@ -27,8 +34,8 @@ public class Doc {
             for (long i = 1L; i <= max_value; i++) {         //CHECK OUT!
                 writer.write("\r");
                 writer.write(String.valueOf(i));
-                writer.write("," + "entity" + i + "," + "ns1," + i + ",,Integer," + i + ",pascal," +
-                        random_method(max_value) + "," + random_method(max_value));
+                writer.write("," + "property" + i + "," + "ns1," + i + ",," + randomValueType() + "," + i + ",pascal," +
+                        random_method(i - 1) + "," + random_method(max_value));
             }
         }
     }
@@ -44,8 +51,8 @@ public class Doc {
             for (long i = 1L; i <= max_value; i++) {
                 writer.write("\r");
                 writer.write(String.valueOf(i));
-                writer.write("," + "entity" + i + "," + "ns1," + i + ",,Integer," + i + ",pascal,"
-                        + random_method(max_value) + ","+ random_method(max_value));
+                writer.write("," + "property_definition" + i + "," + "ns1," + i + ",," + randomValueType() + "," + i + ",pascal,"
+                        + random_method(i - 1) + ","+ random_method(max_value));
             }
         }
     }
@@ -62,7 +69,7 @@ public class Doc {
             for (long i = 1L; i <= max_value; i++) {
                 writer.write("\r");
                 writer.write(String.valueOf(i));
-                writer.write("," + "entity" + i + "," + "ns1," + i + ",,," + random_method(max_value)
+                writer.write("," + "type" + i + "," + "ns1," + i + ",,," + random_method(i - 1)
                         + "," + random_method(max_value));
             }
         }
@@ -79,7 +86,7 @@ public class Doc {
             for (long i = 1L; i <= max_value; i++) {
                 writer.write("\r");
                 writer.write(String.valueOf(i));
-                writer.write("," + "entity" + i + "," + i + "," + "ns1," + "," + random_method(max_value));
+                writer.write("," + "taxonomy" + i + "," + i + "," + "ns1," + "," + random_method(i - 1));
             }
         }
     }
@@ -97,7 +104,7 @@ public class Doc {
                 writer.write("\r");
                 writer.write(String.valueOf(i));
                 writer.write("," + "entity" + i + "," + "ns1," + i + ",,,"
-                        + random_method(max_value) + "," + random_method(max_value));
+                        + random_method(i - 1) + "," + random_method(max_value));
             }
         }
     }
